@@ -6,8 +6,6 @@ function search() {
   if (query === "") {
     alert("Barra de pesquisa vazia!!");
   } else {
-    alert(query);
-
     window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
       query
     )}`;
@@ -15,3 +13,9 @@ function search() {
 }
 
 buttonSearch.addEventListener("click", search);
+
+contentSearch.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    search();
+  }
+});
