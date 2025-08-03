@@ -1,21 +1,24 @@
-const buttonSearch = document.getElementById("search");
-const contentSearch = document.getElementById("searchBar");
+(function () {
+  const buttonSearch = document.getElementById("search");
+  const contentSearch = document.getElementById("searchBar");
 
-function search() {
-  const query = contentSearch.value.trim();
-  if (query === "") {
-    alert("Barra de pesquisa vazia!!");
-  } else {
-    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
-      query
-    )}`;
+  function search() {
+    const query = contentSearch.value.trim();
+
+    if (query === "") {
+      alert("Barra de pesquisa vazia!");
+    } else {
+      window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
+        query
+      )}`;
+    }
   }
-}
 
-buttonSearch.addEventListener("click", search);
+  buttonSearch.addEventListener("click", search);
 
-contentSearch.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    search();
-  }
-});
+  contentSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      search();
+    }
+  });
+})();
